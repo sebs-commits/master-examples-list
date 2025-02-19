@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Department info</title>
+</head>
+<body>
+<table>
+        <thead>
+         <tr>
+           <th>Number</th>
+           <th>Name</th>
+           <th>Location</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr th:each="dept:${departments}">
+             <td th:text="${dept.deptno}">Number</td>
+             <td th:text="${dept.deptname}">Name</td>
+             <td th:text="${dept.location}">Location</td> 
+             <td><a th:href="@{/edit/{id}(id=${dept.deptno})}">Update</a></td>
+             <td><a th:href="@{/delete/{id}(id=${dept.deptno})}">Delete</a></td>
+          </tr>
+        </tbody>
+    </table>
+    
+    <p><a href="/adddept">Add a new Department</a></p>
+</body>
+</html>
