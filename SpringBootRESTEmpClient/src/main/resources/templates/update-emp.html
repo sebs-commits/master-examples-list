@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Update Employee Details</title>
+</head>
+<body>
+<form action="/update" object="${employee}" method="post">  
+        	<h1>Edit Employee Details Form</h1>
+            <table>  
+                <tr>
+                    <td><label>Employee Id</label></td>  
+                    <td th:text="${employee.empId}"></td>
+                    <input type="hidden" name="empId" th:value="${employee.empId}">
+                </tr>
+                <tr>  
+					<td><label>Employee Name</label></td>  
+                    <td th:text="${employee.empName}"></td>
+                    <input type="hidden" name="empName" th:value="${employee.empName}">
+                </tr>  
+                <tr>  
+                    <td><label for="jobTitle">Job Title</label></td>  
+                    <td><input type="text" name="jobTitle"></input></td>  
+                </tr>  
+                <tr>  
+                    <td><label for="salary">Salary</label></td>  
+                    <td><input type="text" name="salary"></input></td>  
+                </tr>  
+                <tr>  
+                    <td><label for="deptNo">Department No</label></td>  
+                    <td><input type="text" name="deptNo"></input></td>  
+                </tr> 
+                <tr>  
+                    <td></td>  
+                    <td><input type="submit" value="Update Employee"></input></td>  
+                </tr>  
+            </table>  
+        </form>  
+</body>
+</html>
